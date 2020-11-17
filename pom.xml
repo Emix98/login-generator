@@ -92,10 +92,38 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>maven</groupId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <argLine>@{jacoco.surefire.argLine}</argLine>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
-        <version>1.5</version>
+        <version>3.0.0</version>
       </plugin>
     </plugins>
   </build>
+  <reporting>
+    <plugins>
+      <!-- Début JaCoCo / plugin de reporting -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>3.0.0</version>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
