@@ -34,4 +34,9 @@ public class LoginGeneratorTest {
         assertEquals("Le login généré devrait être PDUR", "PDUR", lg.generateLoginForNomAndPrenom("Dùrand", "Paul"));
     }
 
+    @Test
+    public void CT5() {
+        assertEquals("Le login généré devrait être PDU", "PDU", lg.generateLoginForNomAndPrenom("Du", "Paul"));
+    }
+
 }
